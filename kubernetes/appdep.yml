@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: academyapp
+  labels:
+    app: academyapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: academyapp
+  template:
+    metadata:
+      labels:
+        app: academyapp
+    spec: # Correct indentation here
+      containers:
+        - name: academyapp
+          image: innovativeacademy/academyapp:V1
+          ports:
+            - name: academyapp-port
+              containerPort: 8080
