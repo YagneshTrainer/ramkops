@@ -60,7 +60,7 @@ pipeline {
         stage('Kubernetes Deploy') {
             agent { label 'KOPS' }
             steps {
-                sh "helm upgrade --install --force vprofile-stack helm/innovativecharts --set appimage=${registry}:Innovative${BUILD_ID} --namespace prod"
+                sh "helm upgrade --install --force vprofile-stack helm/ramcharts --set appimage=${registry}:Innovative${BUILD_ID} --namespace prod"
             }
         }
     }
